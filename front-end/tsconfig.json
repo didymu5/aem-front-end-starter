@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "types": [
+      "jquery",
+      "node"
+    ],
+    "lib": [
+      "dom",
+      "es6"
+    ]
+  }
+}

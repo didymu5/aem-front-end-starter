@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!--
+  <parent>
+    <groupId>com.ahmedmusallm</groupId>
+    <artifactId>front-end</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  -->
+   <groupId>com.ahmedmusallm</groupId>
+  <artifactId>front-end</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+  <name>front-end - Clientlibs</name>
+  <description>A sample clientlib bundle</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-Category>front-end</Bundle-Category>
+            <Bundle-Vendor>Ahmed Musallm</Bundle-Vendor>
+            <Bundle-Name>com.ahmedmusallam.front-end</Bundle-Name>
+            <Sling-Initial-Content>
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/designs/clientlibs/front-end
+            </Sling-Initial-Content>
+          </instructions>
+        </configuration>
+      </plugin>
+      <!-- ====================================================================== -->
+      <!-- E X E C  M A V E N   P L U G I N                                       -->
+      <!-- ====================================================================== -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <executions>
+          <execution>
+            <id>exec-build</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <executable>yarn</executable>
+              <arguments>
+                <argument>build:maven</argument>
+              </arguments>
+              <skip>${skipBuild}</skip>
+            </configuration>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- ====================================================================== -->
+  <!-- P R O F I L E S                                                        -->
+  <!-- ====================================================================== -->
+  <profiles>
+    <!-- Development profile: install only the bundle -->
+    <profile>
+      <id>autoInstallBundle</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>maven-sling-plugin</artifactId>
+            <configuration>
+              <!--  Note that this requires /apps/front-end/install to exist!!       -->
+              <!--  This is typically the case when ui.apps is deployed first                     -->
+              <!--  Otherwise, create /apps/frontend (CRXDE|Lite)  -->
+              <!--  Please chnage this to match your own project                                  -->
+              <slingUrlSuffix>/apps/front-end</slingUrlSuffix>
+              <failOnError>true</failOnError>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>
