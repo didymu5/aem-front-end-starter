@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>AEM front end starter</comment>
+<entry key="createdBy">ahmed musallam</entry>
+<entry key="name">front-end.ui.apps</entry>
+<entry key="created">2017-09-02T16:21:12.844-0800</entry>
+<entry key="groupId">com.ahmedmusallam</entry>
+<entry key="version">1.0.0</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">front-end</entry>
+<entry key="description">front-end package</entry>
+<entry key="artifactId">front-end.ui.apps</entry>
+<entry key="path">/etc/packages/front-end-package/front-end.ui.apps.zip</entry>
+</properties>

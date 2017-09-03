@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>${currentPage.title || currentPage.name}</title>
+        <!-- include the frontend css clientlib -->
+        <sly data-sly-include="/libs/wcm/core/components/init/init.jsp" data-sly-unwrap/>
+        <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" data-sly-unwrap/>
+        
+        <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.css @ categories='front-end'}" data-sly-unwrap/>
+    </head>
+    <body class="page">
+        <div>This is page body!</div>
+        <sly data-sly-resource="${ @path='view-more', resourceType='front-end/components/content/view-more'}"/>        
+        <!-- include the frontend js clientlib -->
+        <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="
+        ${clientLib.js @ categories='front-end'}" data-sly-unwrap/>  
+    </body>
+</html>

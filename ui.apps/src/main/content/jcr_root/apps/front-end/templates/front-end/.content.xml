@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="A sample front-end template"
+    jcr:primaryType="cq:Template"
+    jcr:title="Front-End Sample Page"
+    allowedPaths="[/content(/.*)?]"
+    ranking="{Long}9">>
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="front-end/components/structure/front-end">
+        <view-more
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="front-end/components/content/view-more"/>
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys"/>
+    </jcr:content>
+</jcr:root>

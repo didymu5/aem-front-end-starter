@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Sample Front-End Component"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+     <title
+        jcr:primaryType="nt:unstructured"
+        xtype="textfield"
+        emptyText="Title"
+        fieldDescription="Title"
+        fieldLabel="Title: "
+        name="./title"/>
+    <text
+        jcr:primaryType="nt:unstructured"
+        xtype="textarea"
+        emptyText="empty text"
+        fieldDescription="Text"
+        fieldLabel="Text: "
+        name="./text"/>
+    <viewMore
+        jcr:primaryType="nt:unstructured"
+        xtype="textfield"
+        emptyText="View More"
+        fieldDescription="view more button lable"
+        fieldLabel="View More Label:"
+        name="./viewMore"/>
+    <viewLess
+        jcr:primaryType="nt:unstructured"
+        xtype="textfield"
+        emptyText="View Less"
+        fieldDescription="view less button lable"
+        fieldLabel="View Less Label:"
+        name="./viewLess"/>
+    </items>
+</jcr:root>

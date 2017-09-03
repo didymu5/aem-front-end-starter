@@ -1,6 +1,6 @@
-
-front-end/node_modules/
-front-end/sass-lint/
-front-end/dist/
-front-end/target/
-front-end/src/main/resources/SLING-INF/clientlibs-root/*
+ui\.apps/target/
+clientlibs/node_modules/
+clientlibs/dist/
+clientlibs/target/
+clientlibs/sass-lint/
+clientlibs/src/main/resources/SLING-INF/clientlibs-root/*
