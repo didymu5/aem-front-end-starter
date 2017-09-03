@@ -2,11 +2,11 @@
 
 module.exports = {
   // path to the clientlib in AEM JCR
-  AemPath: '/etc/design/clientlib/front-end',
+  AemPath: '/etc/designs/front-end/front-end',
   // https://github.com/wcm-io-frontend/aem-clientlib-generator#module-clientlibarrprops--props-options-callback 
   props: {
     name: 'front-end',
-    categories: ['front-end'],
+    categories: ['front-end.clientlib'],
     assets: {
       js: { base: '.', files: [{ src: 'dist/generated.js', dest: 'generated.js' },] },
       css: { base: '.', files: [{ src: 'dist/generated.css', dest: 'generated.css' }] },

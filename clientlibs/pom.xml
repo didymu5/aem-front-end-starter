@@ -30,7 +30,7 @@
             <Bundle-Vendor>Ahmed Musallm</Bundle-Vendor>
             <Bundle-Name>com.ahmedmusallam.front-end</Bundle-Name>
             <Sling-Initial-Content>
-              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/designs/clientlibs/front-end
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/designs/front-end/
             </Sling-Initial-Content>
           </instructions>
         </configuration>

@@ -23,7 +23,7 @@
                         name="./title"/>
                     <text
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/textaread"
+                        sling:resourceType="granite/ui/components/foundation/form/textarea"
                         emptyText="empty text"
                         fieldDescription="Text"
                         fieldLabel="Text: "

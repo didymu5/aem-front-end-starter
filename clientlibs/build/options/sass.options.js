@@ -6,5 +6,5 @@ module.exports = {
   sourceMap: true, // generate sourcemaps
   
   // you may need this if you are including a third party scss library
-  includePaths: [] // https://github.com/sass/node-sass#includepaths
+  includePaths: ['node_modules'] // https://github.com/sass/node-sass#includepaths
 };

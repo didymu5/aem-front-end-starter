@@ -1,4 +1,6 @@
 <div class="view-more">
+    <div data-sly-test="${wcmmode.edit && (!properties.title || !properties.text)}">Edit view more component</div>
+
     <h2 class="view-more__title">${properties.title}</h2>
     <div class="view-more__text">${properties.text}</div>
     <a href="javascript:void(0);" class="view-more__more js-view-more"> ${properties.viewMore}</a>
