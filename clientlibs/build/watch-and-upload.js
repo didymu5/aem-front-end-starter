@@ -8,14 +8,17 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const clientlibOptions = require('./options/clientlib.options.js')
+const clientlibOptions = require('./options/clientlib.options.js');
+const ora = require('ora');
 
+const spinner = ora('Loading unicorns');
 /**
  * Uploads a file from local dis directly to AEM
- * @param {*} filePath path to file to upload 
- * @param {*} uploadPath aem path to upload to 
+ * @param {*} filePath path to file to upload
+ * @param {*} uploadPath aem path to upload to
  */
 function uploadToAem(filePath, uploadPath) {
+  spinner.start();
   fs.readFile(filePath, (err, data) =>
   {
 
@@ -31,7 +34,7 @@ function uploadToAem(filePath, uploadPath) {
         'Authorization': 'Basic ' + new Buffer('admin:admin').toString('base64') // change auth user:pass if not using default
       }
     };
-    console.log(`uploading ${filePath} to aem path ${uploadPath}`);    
+    console.log(`uploading ${filePath} to aem path ${uploadPath}`);
     // send a put request
     const req = http.request(options, (res) => {
       res.setEncoding('utf8');
@@ -55,5 +58,6 @@ const watchDir = 'dist/'; // directory to watch
 // watch and upload to AEM
 fs.watch(watchDir, (eventType, filename) => {
   uploadToAem(watchDir+filename, clientlibOptions.AemPath);
+  spinner.stop();
 });
 
