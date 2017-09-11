@@ -6,7 +6,7 @@ This project utelizes [Sling Content Loading](https://sling.apache.org/documenta
 > 1. This auto-reload proccess is for **development only** and you should
 > always run your typical maven build to deploy to local AEM
 
-> 2. The watch/reload proccess only works for this clientlib (SCSS/TS) and will not work for html changes in you's ui.apps module
+> 2. The watch/reload proccess only works for this clientlib (SCSS/JS) and will not work for html changes in you's ui.apps module
 
 The following command trigger webpack process to bundle the JS/CSS and deploy them (only css and js) to AEM.
 
@@ -15,9 +15,9 @@ The following command trigger webpack process to bundle the JS/CSS and deploy th
 for browser refresh support for all modern browsers:
 
 1. Run`yarn run watch`.
-2. Change a `.ts/.scss` file on your local project. (this change kicks off the browser reload process)
+2. Change a `.js/.scss` file on your local project. (this change kicks off the browser reload process)
 3. Go to any page that has this clientlib.
-4. Now make changes to `.ts/.scss` file and watch the browser automatically reload!
+4. Now make changes to `.js/.scss` file and watch the browser automatically reload!
 
 
 # SCSS Lint
