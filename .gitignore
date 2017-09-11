@@ -4,3 +4,4 @@ clientlibs/dist/
 clientlibs/target/
 clientlibs/sass-lint/
 clientlibs/src/main/resources/SLING-INF/clientlibs-root/*
+clientlibs/yarn-error.log
