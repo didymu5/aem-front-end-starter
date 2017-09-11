@@ -26,27 +26,45 @@ else {
 module.exports = {
   devtool: webpackOptions.sourceMap ? 'source-map' : '',
   entry: webpackOptions.entry,
-  output: { filename:  webpackOptions.output},
+  output: {
+    filename: webpackOptions.output
+  },
   resolve: {
-    // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: ['.ts', '.tsx', '.js', '.scss']
+    extensions: ['.js', '.scss']
   },
   module: {
-    loaders: [
-      { test: /\.ts$/, loader: 'ts-loader' },
-      {
-        test: /\.scss$/,
-        use: extractSass.extract
-        ({
-          use:
-          [
-            { loader: 'css-loader', options:{ url:false, optimize:true, minimize:true}},
-            { loader: 'postcss-loader', options: {config:{path: 'build/postcss.config.js'} } },
-            { loader: 'sass-loader', options: sassLoaderOptions}
-          ]
-        })
+    loaders: [{
+      test: /\.scss$/,
+      use: extractSass.extract({
+        use: [{
+          loader: 'css-loader',
+          options: {
+            url: false,
+            optimize: true,
+            minimize: true
+          }
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: 'build/postcss.config.js'
+            }
+          }
+        }, {
+          loader: 'sass-loader',
+          options: sassLoaderOptions
+        }]
+      })
+    }, {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env']
+        }
       }
-    ]
+    }]
   },
   plugins: plugins,
 };
