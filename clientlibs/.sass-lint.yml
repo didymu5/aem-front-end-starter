@@ -50,5 +50,5 @@ rules:
     - convention: 'hyphenatedbem'
   brace-style:
     - 1
-    - style: allman
+    - style: 1TBS
     - allow-single-line: true
