@@ -14,7 +14,7 @@ const plugins = [ extractSass ];
 const watch = process.argv.filter(arg => arg === '--watch').length;
 // if watch option is enabled, add shell plugin and livereload
 if(watch) {
-  plugins.push(new WebpackShellPlugin({onBuildEnd:['node build/watch-and-upload.js']}));
+  plugins.push(new WebpackShellPlugin({onBuildEnd:['node build/watch-and-upload.js', 'node build/sass.js']}));
   plugins.push(new LiveReloadPlugin({appendScriptTag: true}));
 }
 // if watch option is not enabled, add occurrence order and uglify plugin
