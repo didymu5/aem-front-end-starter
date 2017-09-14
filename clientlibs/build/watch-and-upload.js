@@ -9,16 +9,14 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const clientlibOptions = require('./options/clientlib.options.js');
-const ora = require('ora');
 
-const spinner = ora('Loading unicorns');
 /**
  * Uploads a file from local dis directly to AEM
  * @param {*} filePath path to file to upload
  * @param {*} uploadPath aem path to upload to
  */
 function uploadToAem(filePath, uploadPath) {
-  spinner.start();
+
   fs.readFile(filePath, (err, data) =>
   {
 
@@ -58,6 +56,5 @@ const watchDir = 'dist/'; // directory to watch
 // watch and upload to AEM
 fs.watch(watchDir, (eventType, filename) => {
   uploadToAem(watchDir+filename, clientlibOptions.AemPath);
-  spinner.stop();
 });
 
