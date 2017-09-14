@@ -3,7 +3,7 @@
 module.exports = {
   // path to the clientlib in AEM JCR
   AemPath: '/etc/designs/front-end/front-end',
-  // https://github.com/wcm-io-frontend/aem-clientlib-generator#module-clientlibarrprops--props-options-callback 
+  // https://github.com/wcm-io-frontend/aem-clientlib-generator#module-clientlibarrprops--props-options-callback
   props: {
     name: 'front-end',
     categories: ['front-end.clientlib'],
@@ -21,9 +21,9 @@ module.exports = {
       }
     }
   },
-  // https://github.com/wcm-io-frontend/aem-clientlib-generator#module-clientlibarrprops--props-options-callback 
+  // https://github.com/wcm-io-frontend/aem-clientlib-generator#module-clientlibarrprops--props-options-callback
   options: {
     clientLibRoot: 'src/main/resources/SLING-INF/clientlibs-root', // where the generated clientlib will be
-    verbose: true // true for more logs 
+    verbose: true // true for more logs
   }
 };
